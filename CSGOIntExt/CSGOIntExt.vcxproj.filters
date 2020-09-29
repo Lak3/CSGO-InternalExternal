@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Features">
+      <UniqueIdentifier>{a8bdf980-eb4f-4259-b9a0-e5e57401a7d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{c322eebb-5166-434c-8d4f-c28db8dc616c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Triggerbot">
+      <UniqueIdentifier>{49486f49-da55-4407-a244-2435dc56061a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Misc">
+      <UniqueIdentifier>{ec50c89d-f444-4989-a702-0e8d31a3282e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Main">
+      <UniqueIdentifier>{f6b76cd5-db24-41d3-823d-fb13b7cebc0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Main\EntityCache">
+      <UniqueIdentifier>{83417a01-33f8-4d58-8fbd-fbd92a6fc33d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Main\BaseEntity">
+      <UniqueIdentifier>{500c6df8-8553-4182-98ba-23d67494ce1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Includes">
+      <UniqueIdentifier>{7187da3a-c92b-4d96-8cbc-ee0da39ef9d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{e4a68851-c381-43b9-acef-1c5286e96667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Memory">
+      <UniqueIdentifier>{50c9e7c7-7caa-4ed8-9b3a-0d1116b71cf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Math">
+      <UniqueIdentifier>{f7e740ba-c55d-476a-b48d-e1b092357b98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Main\Engine">
+      <UniqueIdentifier>{6247d1ea-7073-483c-a600-0e30db26eff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Visual">
+      <UniqueIdentifier>{9b251b53-9705-4d52-ac10-65848f875dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Visual\Radar">
+      <UniqueIdentifier>{673e68e8-d8a4-4d5a-b583-482a70b4f60f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Visual\Glow">
+      <UniqueIdentifier>{dbe42cdf-f54a-486a-ae84-d75bf35f3686}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Aimbot">
+      <UniqueIdentifier>{36f6e946-f234-451c-8265-ab6b5e0987d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Main\ClientState">
+      <UniqueIdentifier>{435f87e5-c6aa-403e-a2f6-1e3d145c5c31}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSGO\Utils\Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\Utils\Memory\Memory.h">
+      <Filter>Utils\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\SDK.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Main\EntityCache\EntityCache.h">
+      <Filter>SDK\Main\EntityCache</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Main\BaseEntity\BaseEntity.h">
+      <Filter>SDK\Main\BaseEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Includes\Classes.h">
+      <Filter>SDK\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Includes\Enums.h">
+      <Filter>SDK\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Includes\Structs.h">
+      <Filter>SDK\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\Features\Misc\Misc.h">
+      <Filter>Features\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\Features\Triggerbot\Triggerbot.h">
+      <Filter>Features\Triggerbot</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Includes\Const.h">
+      <Filter>SDK\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\Utils\Math\Math.h">
+      <Filter>Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Includes\Offsets.h">
+      <Filter>SDK\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Main\Engine\Engine.h">
+      <Filter>SDK\Main\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\Features\Visual\Radar\Radar.h">
+      <Filter>Features\Visual\Radar</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\Features\Visual\Glow\Glow.h">
+      <Filter>Features\Visual\Glow</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\Features\Aimbot\Aimbot.h">
+      <Filter>Features\Aimbot</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGO\SDK\Main\ClientState\ClientState.h">
+      <Filter>SDK\Main\ClientState</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CSGO\Utils\Memory\Memory.cpp">
+      <Filter>Utils\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\SDK\Main\EntityCache\EntityCache.cpp">
+      <Filter>SDK\Main\EntityCache</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\SDK\Main\BaseEntity\BaseEntity.cpp">
+      <Filter>SDK\Main\BaseEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\Features\Misc\Misc.cpp">
+      <Filter>Features\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\Features\Triggerbot\Triggerbot.cpp">
+      <Filter>Features\Triggerbot</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\Main.cpp" />
+    <ClCompile Include="CSGO\SDK\Main\Engine\Engine.cpp">
+      <Filter>SDK\Main\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\Features\Visual\Radar\Radar.cpp">
+      <Filter>Features\Visual\Radar</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\Features\Visual\Glow\Glow.cpp">
+      <Filter>Features\Visual\Glow</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\Features\Aimbot\Aimbot.cpp">
+      <Filter>Features\Aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO\SDK\Main\ClientState\ClientState.cpp">
+      <Filter>SDK\Main\ClientState</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
