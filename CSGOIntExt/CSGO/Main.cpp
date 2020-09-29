@@ -61,11 +61,3 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 
 	return TRUE;
 }
-
-namespace Core
-{
-	DWORD Client = 0;
-	DWORD Engine = 0;
-
-	HWND GameWindow = 0;
-}

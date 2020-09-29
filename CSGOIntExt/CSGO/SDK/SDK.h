@@ -52,10 +52,10 @@
 
 namespace Core
 {
-	extern DWORD Client;
-	extern DWORD Engine;
+	inline DWORD Client = 0x0;
+	inline DWORD Engine = 0x0;
 
-	extern HWND GameWindow;
+	inline HWND GameWindow = nullptr;
 
 	namespace Vars
 	{
