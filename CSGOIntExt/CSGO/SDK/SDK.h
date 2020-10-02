@@ -56,6 +56,8 @@ namespace Core
 	inline DWORD Engine = 0x0;
 
 	inline HWND GameWindow = nullptr;
+	
+	inline size_t AllocSize = 0;
 
 	namespace Vars
 	{

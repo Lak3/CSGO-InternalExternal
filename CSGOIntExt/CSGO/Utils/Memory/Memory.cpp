@@ -4,9 +4,8 @@ C_Memory gMem;
 
 void C_Memory::Clear()
 {
-	//Close the handle, if one was opened in the first place
-	if (m_hProcess)
-		CloseHandle(m_hProcess);
+	if (m_lpAlloc) VirtualFreeEx(m_hProcess, m_lpAlloc, 0, MEM_RELEASE);
+	if (m_hProcess) CloseHandle(m_hProcess);
 }
 
 bool C_Memory::GetProcess(std::string_view szName)
@@ -77,4 +76,21 @@ DWORD C_Memory::GetModuleSize(std::string_view szModule)
 	}
 
 	return 0x0;
+}
+
+void C_Memory::RemoteThread(DWORD dwAddr, LPVOID lpPar)
+{
+	if (auto hRem = CreateRemoteThread(m_hProcess, 0, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(dwAddr), lpPar, 0, 0))
+	{
+		WaitForSingleObject(hRem, 1000); //1s
+		CloseHandle(hRem);
+	}
+}
+
+LPVOID C_Memory::GetAlloc()
+{
+	if (!m_lpAlloc)
+		m_lpAlloc = VirtualAllocEx(m_hProcess, 0, Core::AllocSize, MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+
+	return m_lpAlloc;
 }

@@ -1,0 +1,15 @@
+
+CSGOIntExt/Release/Engine.obj
+*.obj
+*.tlog
+*.dll
+*.iobj
+*.ipdb
+*.log
+*.txt
+*.pdb
+*.idb
+*.ilk
+*.ipch
+CSGOIntExt/.vs/CSGOIntExt/v16/.suo
+*.db

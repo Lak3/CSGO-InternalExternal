@@ -7,6 +7,7 @@ class C_Memory
 public:
 	DWORD m_dwPID	  = 0x0;
 	HANDLE m_hProcess = 0;
+	LPVOID m_lpAlloc = nullptr;
 
 public:
 	template<class cDataType>
@@ -39,10 +40,12 @@ public:
 
 public:
 	void Clear();
+	void RemoteThread(DWORD dwAddr, LPVOID lpPar = NULL);
 
 	bool GetProcess(std::string_view szName);
 	DWORD GetModule(std::string_view szName);
 	DWORD GetModuleSize(std::string_view szName);
+	LPVOID GetAlloc();
 
 };
 
