@@ -13,3 +13,6 @@ CSGOIntExt/Release/Engine.obj
 *.ipch
 CSGOIntExt/.vs/CSGOIntExt/v16/.suo
 *.db
+*.db-shm
+*.opendb
+*.db-wal

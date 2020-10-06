@@ -4,8 +4,8 @@ C_Engine gEngine;
 
 bool C_Engine::TrainingSoftware()
 {
-	if (gMem.GetProcess(Core::String::szSteam) || gMem.GetProcess(Core::String::szCSGO))
-		return Util::ErrorBox(Core::String::szFailSteam);
+	//if (gMem.GetProcess(Core::String::szSteam) || gMem.GetProcess(Core::String::szCSGO))
+	//	return Util::ErrorBox(Core::String::szFailSteam);
 
 	Util::InfoBox(Core::String::szInfoWaiting);
 
@@ -23,14 +23,13 @@ bool C_Engine::TrainingSoftware()
 	{
 		Core::Client = gMem.GetModule(Core::String::szClientDLL);
 		std::this_thread::sleep_for(std::chrono::seconds(1));
+		Core::Engine = gMem.GetModule(Core::String::szEngineDLL);
 	}
-
-	Core::Engine = gMem.GetModule(Core::String::szEngineDLL);
 
 	if (!Core::Client || !Core::Engine)
 		return Util::ErrorBox(Core::String::szFailModules);
 
-	return true;
+	return true; //Fuck yeah.
 }
 
 void C_Engine::SetViewAngles(Vec3 vAngle)

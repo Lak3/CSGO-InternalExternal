@@ -35,6 +35,7 @@ private:
 	std::vector<Target_t> m_vecTargets;
 	Vec3 m_vLocalEyePos;
 	Vec3 m_vLocalAngle;
+	Vec3 m_vLocalPunch;
 };
 
 extern C_Aimbot gAimbot;

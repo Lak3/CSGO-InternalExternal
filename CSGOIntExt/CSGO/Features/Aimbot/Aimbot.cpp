@@ -8,8 +8,10 @@ void C_Aimbot::Run()
 	{
 		if (const auto& pLocal = gEntCache.pLocal)
 		{
+			//Update some vars we need here, to remove need of multiple reads.
 			m_vLocalEyePos = pLocal->GetEyePos();
 			m_vLocalAngle = gEngine.GetViewAngles();
+			m_vLocalPunch = pLocal->GetAimPunch() * 2.0f;
 
 			Target_t Target = { };
 
@@ -30,9 +32,6 @@ bool C_Aimbot::GetTarget(C_BaseEntity* pLocal, Target_t& out)
 
 	for (auto& Target : m_vecTargets)
 	{
-		if (!Core::Vars::Aimbot::SortByDistance && Target.fFovTo > Core::Vars::Aimbot::flFov)
-			continue;
-
 		//TODO:
 		//-Skip all non-visible entities (Visibility check)
 		//-idk
@@ -63,7 +62,11 @@ bool C_Aimbot::GetTargets(C_BaseEntity* pLocal)
 			Target.eType = ETargetType::PLAYER;
 			Target.vPosition = pEntity->GetBonePos(Core::Vars::Aimbot::nBone);
 			Target.vAngleTo = Math::CalcAngle(m_vLocalEyePos, Target.vPosition);
-			Target.fFovTo = Math::CalcFov(m_vLocalAngle + (pLocal->GetAimPunch() * 2.0f), Target.vAngleTo);
+			Target.fFovTo = Math::CalcFov(m_vLocalAngle + m_vLocalPunch, Target.vAngleTo);
+
+			if (!Core::Vars::Aimbot::SortByDistance && Target.fFovTo > Core::Vars::Aimbot::flFov)
+				continue;
+
 			Target.fDistTo = m_vLocalEyePos.DistTo(Target.vPosition);
 
 			m_vecTargets.push_back(Target);
@@ -83,7 +86,11 @@ bool C_Aimbot::GetTargets(C_BaseEntity* pLocal)
 			Target.eType = ETargetType::CHICKEN;
 			Target.vPosition = pEntity->GetVecOrigin() + Vec3(0, 0, 10);
 			Target.vAngleTo = Math::CalcAngle(m_vLocalEyePos, Target.vPosition);
-			Target.fFovTo = Math::CalcFov(m_vLocalAngle + (pLocal->GetAimPunch() * 2.0f), Target.vAngleTo);
+			Target.fFovTo = Math::CalcFov(m_vLocalAngle + m_vLocalPunch, Target.vAngleTo);
+
+			if (!Core::Vars::Aimbot::SortByDistance && Target.fFovTo > Core::Vars::Aimbot::flFov)
+				continue;
+
 			Target.fDistTo = m_vLocalEyePos.DistTo(Target.vPosition);
 
 			m_vecTargets.push_back(Target);
@@ -95,7 +102,7 @@ bool C_Aimbot::GetTargets(C_BaseEntity* pLocal)
 
 void C_Aimbot::SetAngles(const Target_t& Target, C_BaseEntity* pLocal)
 {
-	Vec3 vAngle = Target.vAngleTo - (pLocal->GetAimPunch() * 2.0f);
+	Vec3 vAngle = Target.vAngleTo - m_vLocalPunch;
 	Math::ClampAngles(vAngle);
 
 	if (Core::Vars::Aimbot::SmoothAim)

@@ -77,20 +77,3 @@ DWORD C_Memory::GetModuleSize(std::string_view szModule)
 
 	return 0x0;
 }
-
-void C_Memory::RemoteThread(DWORD dwAddr, LPVOID lpPar)
-{
-	if (auto hRem = CreateRemoteThread(m_hProcess, 0, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(dwAddr), lpPar, 0, 0))
-	{
-		WaitForSingleObject(hRem, 1000); //1s
-		CloseHandle(hRem);
-	}
-}
-
-LPVOID C_Memory::GetAlloc()
-{
-	if (!m_lpAlloc)
-		m_lpAlloc = VirtualAllocEx(m_hProcess, 0, Core::AllocSize, MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-
-	return m_lpAlloc;
-}

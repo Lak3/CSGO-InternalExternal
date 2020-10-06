@@ -56,8 +56,6 @@ namespace Core
 	inline DWORD Engine = 0x0;
 
 	inline HWND GameWindow = nullptr;
-	
-	inline size_t AllocSize = 0;
 
 	namespace Vars
 	{
@@ -84,7 +82,7 @@ namespace Core
 			inline bool Players = true;
 			inline bool IgnoreTeam = true;
 			inline bool IgnoreJumping = false;
-			inline bool WaitForPunch = false;
+			inline bool WaitForPunch = true;
 			inline bool OnlyOnGround = true;
 			inline bool Chickens = true;
 			inline int nKey = 0x06;
@@ -122,8 +120,8 @@ namespace Core
 		constexpr std::int32_t m_iGlowIndex = 0xA438;
 		constexpr std::int32_t m_iCrosshairId = 0xB3E4;
 		constexpr std::int32_t m_aimPunchAngle = 0x302C;
-		constexpr std::int32_t dwEntityList = 0x4D4F1FC;
-		constexpr std::int32_t dwLocalPlayer = 0xD3AC5C;
+		constexpr std::int32_t dwEntityList = 0x4D5022C;
+		constexpr std::int32_t dwLocalPlayer = 0xD3BC5C;
 		constexpr std::int32_t m_dwBoneMatrix = 0x26A8;
 		constexpr std::int32_t m_bGunGameImmunity = 0x3944;
 		constexpr std::int32_t m_vecViewOffset = 0x108;
@@ -132,7 +130,7 @@ namespace Core
 		constexpr std::int32_t dwClientState_MaxPlayer = 0x388;
 		constexpr std::int32_t dwClientState_State = 0x108;
 		constexpr std::int32_t dwClientState_ViewAngles = 0x4D88;
-		constexpr std::int32_t dwGlowObjectManager = 0x5296FF0;
+		constexpr std::int32_t dwGlowObjectManager = 0x5298078;
 	}
 
 	//These have no real meaning lol.

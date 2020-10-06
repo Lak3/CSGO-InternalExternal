@@ -40,12 +40,10 @@ public:
 
 public:
 	void Clear();
-	void RemoteThread(DWORD dwAddr, LPVOID lpPar = NULL);
 
 	bool GetProcess(std::string_view szName);
 	DWORD GetModule(std::string_view szName);
 	DWORD GetModuleSize(std::string_view szName);
-	LPVOID GetAlloc();
 
 };
 
